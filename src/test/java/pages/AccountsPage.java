@@ -10,7 +10,6 @@ import wrappers.TextArea;
 import java.awt.*;
 
 public class AccountsPage extends BasePage {
-    //WebDriver driver;
 
     public AccountsPage(WebDriver driver) {
         super(driver);
@@ -21,16 +20,7 @@ public class AccountsPage extends BasePage {
         driver.get("https://engineer2.lightning.force.com/lightning/o/Account/new");
     }
 
-    /*
-    public void open() {
-        driver.get("https://engineer2.lightning.force.com/lightning/o/Account/list");
-    }
-
-    public void clickNew() {
-        driver.findElement(By.cssSelector("[title=New]")).click();
-    }
-*/
-    @Step("Filling in all fields")
+       @Step("Filling in all fields")
     public void fillIn(String accountName, String parentAccount, String phone, String fax, String website,
                        String employees, String annualRevenue,
                        String description, String billingStreet, String shippingStreet, String billingCity,
@@ -55,11 +45,9 @@ public class AccountsPage extends BasePage {
         new Input(driver, "Billing Country").write(billingCountry);
         new Input(driver, "Shipping Zip/Postal Code").write(shippingZipPostalCode);
         new Input(driver, "Shipping Country").write(shippingCountry);
-
     }
 
     public void save() {
         driver.findElement(By.cssSelector("[title=Save]")).click();
     }
-
 }

@@ -11,10 +11,8 @@ import org.testng.annotations.*;
 import pages.AccountsPage;
 import pages.LoginPage;
 
-
 import java.time.Duration;
 
-//@Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
@@ -45,7 +43,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
-     //       driver.quit();
+            driver.quit();
         }
     }
 }

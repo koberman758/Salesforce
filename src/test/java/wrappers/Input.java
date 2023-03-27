@@ -3,6 +3,7 @@ package wrappers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 public class Input {
     String label;
     WebDriver driver;
@@ -16,5 +17,4 @@ public class Input {
     public void write(String text) {
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
     }
-
 }

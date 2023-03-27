@@ -1,5 +1,4 @@
 package pages;
-
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,9 +25,9 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Finding element user on the page")
-    public void userTitle(){
+    public void userTitle() {
         driver.findElement(By.cssSelector("[title=User]")).isDisplayed();
-        }
     }
+}
 
 
