@@ -12,7 +12,7 @@ public class LoginTest extends BaseTest {
         loginPage.userTitle();
         accountsPage.createAccount();
        accountsPage.fillIn("Account Name", "Parent Account", "Phone", "Fax",
-               "Website", "Аналитик", "Employees", "Связь", "Annual Revenue",
+               "Website", "Employees", "Annual Revenue",
                "Description", "Billing Street", "Shipping Street",
                "Billing City", "Billing State/Province", "Shipping City",
                "Shipping State", "Billing Zip/Postal Code", "Billing Country",

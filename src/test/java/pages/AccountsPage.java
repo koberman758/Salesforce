@@ -4,7 +4,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import wrappers.Input;
-import wrappers.DropDown;
 import wrappers.TextArea;
 
 
@@ -33,7 +32,7 @@ public class AccountsPage extends BasePage {
 */
     @Step("Filling in all fields")
     public void fillIn(String accountName, String parentAccount, String phone, String fax, String website,
-                       String type, String employees, String industry, String annualRevenue,
+                       String employees, String annualRevenue,
                        String description, String billingStreet, String shippingStreet, String billingCity,
                        String billingStateProvince, String shippingCity, String shippingState,
                        String billingZipPostalCode, String billingCountry, String shippingZipPostalCode,
@@ -43,10 +42,8 @@ public class AccountsPage extends BasePage {
         new Input(driver, "Phone").write(phone);
         new Input(driver, "Fax").write(fax);
         new Input(driver, "Website").write(website);
-        new DropDown(driver, "Type").select(type);
         new Input(driver, "Employees").write(employees);
-        new DropDown(driver, "Industry").select(industry);
-        new Input(driver, "AnnualRevenue").write(annualRevenue);
+        new Input(driver, "Annual Revenue").write(annualRevenue);
         new TextArea(driver, "Description").write(description);
         new TextArea(driver, "Billing Street").write(billingStreet);
         new TextArea(driver, "Shipping Street").write(shippingStreet);
