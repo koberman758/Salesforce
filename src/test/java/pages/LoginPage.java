@@ -1,7 +1,9 @@
 package pages;
+
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.AllureUtils;
 
 public class LoginPage extends BasePage {
     public static final By USERNAME_INPUT = By.id("username");
@@ -22,6 +24,7 @@ public class LoginPage extends BasePage {
         driver.findElement(USERNAME_INPUT).sendKeys(user);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
+        AllureUtils.takeScreenshot(driver);
     }
 
     @Step("Finding element user on the page")
