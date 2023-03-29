@@ -24,13 +24,12 @@ public class AccountsPage extends BasePage {
         AllureUtils.takeScreenshot(driver);
     }
 
-        @Step("Filling in all fields")
+    @Step("Filling in all fields")
     public void fillIn(String accountName, String parentAccount, String phone, String fax, String website,
                        String employees, String annualRevenue, String description, String billingStreet,
                        String shippingStreet, String billingCity, String billingStateProvince,
-                       String shippingCity, String shippingState,
-                       String billingZipPostalCode, String billingCountry, String shippingZipPostalCode,
-                       String shippingCountry) {
+                       String shippingCity, String shippingState, String billingZipPostalCode, String billingCountry,
+                       String shippingZipPostalCode, String shippingCountry) {
         new Input(driver, "Account Name").write(accountName);
         new Input(driver, "Parent Account").write(parentAccount);
         new Input(driver, "Phone").write(phone);
