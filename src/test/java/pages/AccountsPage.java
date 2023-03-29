@@ -52,6 +52,7 @@ public class AccountsPage extends BasePage {
 
     }
 
+    @Step("Saving the created account")
     public void save() {
         driver.findElement(By.cssSelector("[title=Save]")).click();
         AllureUtils.takeScreenshot(driver);
