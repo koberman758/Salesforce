@@ -8,15 +8,18 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 
-import pages.AccountsPage;
+import pages.AccountListPage;
 import pages.LoginPage;
+import pages.NewAccountPage;
 
 import java.time.Duration;
 
 public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
-    AccountsPage accountsPage;
+    AccountListPage accountListPage;
+    NewAccountPage newAccountPage;
+
     public static final String USER = "david758-339y@force.com";
     public static final String PASSWORD = "david7587830";
 
@@ -27,6 +30,7 @@ public class BaseTest {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--headless");
             driver = new ChromeDriver(options);
         } else if (browser.equals("edge")) {
             WebDriverManager.edgedriver().setup();
@@ -37,13 +41,13 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
-        accountsPage = new AccountsPage(driver);
+        accountListPage = new AccountListPage(driver);
          }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+        //    driver.quit();
         }
     }
 }
